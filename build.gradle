@@ -19,6 +19,11 @@ allprojects {
     repositories {
         jcenter()
         google()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        implementation 'com.github.songyanho:Floating-Bubble-Library-Android:2.0.0'
     }
 }
 

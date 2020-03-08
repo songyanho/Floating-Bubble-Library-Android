@@ -26,6 +26,7 @@ public class FloatingBubbleConfig {
   private int paddingDp;
   private int borderRadiusDp;
   private boolean physicsEnabled;
+  private boolean disableClose;
 
   private FloatingBubbleConfig(Builder builder) {
     bubbleIcon = builder.bubbleIcon;
@@ -40,6 +41,7 @@ public class FloatingBubbleConfig {
     borderRadiusDp = builder.borderRadiusDp;
     physicsEnabled = builder.physicsEnabled;
     removeBubbleAlpha = builder.removeBubbleAlpha;
+    disableClose = builder.disableClose;
   }
 
   public static Builder getDefaultBuilder(Context context) {
@@ -108,6 +110,14 @@ public class FloatingBubbleConfig {
     return removeBubbleAlpha;
   }
 
+  public void setDisableClose(boolean disableClose) {
+    this.disableClose = disableClose;
+  }
+
+  public boolean isDisableClose() {
+    return disableClose;
+  }
+
   public static final class Builder {
     private Drawable bubbleIcon;
     private Drawable removeBubbleIcon;
@@ -121,6 +131,7 @@ public class FloatingBubbleConfig {
     private int borderRadiusDp = 4;
     private float removeBubbleAlpha = 1.0f;
     private boolean physicsEnabled = true;
+    private boolean disableClose = false;
 
     public Builder() {
     }
@@ -194,6 +205,11 @@ public class FloatingBubbleConfig {
 
     public Builder removeBubbleAlpha(float val) {
       removeBubbleAlpha = val;
+      return this;
+    }
+
+    public Builder setDisableClose(boolean val) {
+      disableClose = val;
       return this;
     }
   }

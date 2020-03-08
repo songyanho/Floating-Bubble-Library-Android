@@ -174,7 +174,7 @@ public class FloatingBubbleService extends Service {
     windowManager.addView(bubbleView, bubbleParams);
 
     // Setting the configuration
-    if (config.getRemoveBubbleIcon() != null) {
+    if (!config.isDisableClose() && config.getRemoveBubbleIcon() != null) {
       ((ImageView) removeBubbleView).setImageDrawable(config.getRemoveBubbleIcon());
     }
     if (config.getBubbleIcon() != null) {
